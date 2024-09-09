@@ -14,6 +14,11 @@
             width: 250px;
         }
 
+        .country {
+            position: relative !important;
+            left: 0px !important;
+
+        }
      }
 </style>
 
@@ -59,30 +64,35 @@
                         <option value="Arctic">Arctic</option>
                         <option value="Domes">Domes</option>
                         <option value="Boats">Boats</option>
+                       
                       </select>
+                      
                 </div>
-                 <div class="row">
-                    <div class="mb-3 col-md-4">
+                 
+                    <div class="mb-3 col-md-4 offset-2 ">
                         <label class="from-label" for="price">Price</label>
                         <input type="text" name =listing[price] value="<%= listing.price %>" class="form-control" id="price" required>
                         <div class="invalid-feedback">Price should be valid</div>
                     </div>
-                    <div class="mb-3 col-md-8">
+                    <div class="mb-3 col-md-4 country ">
                         <label class="from-label" for="country">Country</label>
                         <input type="text" name =listing[country] value="<%= listing.country %>" class="form-control" id="country" required>
                         <div class="invalid-feedback">Country should be valid</div>
                     </div>
-                </div>
-                 <div class="mb-3">
+                
+                 <div class="mb-3 col-md-8 offset-2">
                     <label class="from-label" for="loaction">Location</label>
                     <input type="text" name =listing[location] value="<%= listing.location %>" class="form-control" id="location" required>
                     <div class="invalid-feedback">Loaction should be valid</div>
+                    
                  </div>
+                 <div class="mb-3 col-md-8 offset-2">
                <button class="btn btn-dark edit-btn mt-3 mb-3">Edit</button>
+            </div>
         
             </form>
         </div>
-    </div>
+    
    
     
 </body>

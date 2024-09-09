@@ -36,6 +36,7 @@ module.exports.createNewListing = async (req, res) => {
     let filename = req.file.filename;
     const newListing = new Listing(req.body.listing);
     newListing.image = {url , filename};
+    console.log(newListing);
     console.log(req.user)
     newListing.owner = req.user._id;
     //with out using joi
@@ -50,6 +51,7 @@ module.exports.createNewListing = async (req, res) => {
 module.exports.editListing = async (req,res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id);
+    console.log(listing);
     if(!listing){
      req.flash("error" , "Listing you requested for is not exists");
      res.redirect("/listings");
@@ -66,6 +68,7 @@ module.exports.editListing = async (req,res)=>{
     // }
     
     let listing = await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    console.log(listing);
     if(typeof req.file != "undefined"){
     let url = req.file.path;
     let filename = req.file.filename;
