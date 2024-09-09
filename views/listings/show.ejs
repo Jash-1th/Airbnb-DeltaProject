@@ -97,15 +97,17 @@
          <div class="row  offset-3">
             
                
-                  <% for(review of listing.reviews){ %>
+                  <% for(review of listing.reviews){%>
+                     
                      <div class="card mb-3 mt-3 ms-3 col-md-5 col-sm-10">
                         <div class="card-title">@<%= review.author.username %></div>
                         <p class="starability-result" data-rating="<%= review.rating %>"> </p>
                         <p class="card-text"> <%= review.comment %></p>
-                        
+                        <% if(currUser && review.author._id.equals(currUser._id) )  {%>
                         <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" >
                            <button class="btn btn-sm btn-dark mb-3">Delete</button>
                         </form>
+                        <%  } %>
                      </div>
                   <%  } %>
          </div>

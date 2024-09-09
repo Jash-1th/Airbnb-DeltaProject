@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node" : "20.16.0"
-  },
   "dependencies": {
     "cloudinary": "^1.21.0",
     "connect-flash": "^0.1.1",
